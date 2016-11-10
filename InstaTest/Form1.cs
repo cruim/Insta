@@ -34,15 +34,41 @@ namespace Demo
         {
             var xx = new StreamReader("proxy.txt");
             string input = xx.ReadLine();
-            //string input = "ywSICy:PgZuYf@185.147.128.14:8000";
             string pattern = @"(.*):(.*)@(.*):(.*)";
             Regex regex = new Regex(pattern);
             Match match = regex.Match(input);
-            string proxyName = match.Groups[1].Value;
-            string proxyPass = match.Groups[2].Value;
+            proxyLogin = match.Groups[1].Value;
+            proxyPass = match.Groups[2].Value;
             proxy = match.Groups[3].Value;
-            string port = match.Groups[4].Value;
+            port = match.Groups[4].Value;
             //xx.Close();
+        }
+
+        public static void GetNameFromFile()
+        {
+            var xx = new StreamReader("name.txt");
+            string input = xx.ReadLine();
+            name = input;
+        }
+
+        public static void GetEmailFromFile()
+        {
+            var xx = new StreamReader("email.txt");
+            string input = xx.ReadLine();
+            name = input;
+        }
+
+        public static void GetPassFromFile()
+        {
+            var xx = new StreamReader("pass.txt");
+            string input = xx.ReadLine();
+            name = input;
+        }
+
+        public static void WriteFinalInfoInFile()
+        {
+            string finalInfo = nickName + ":" + pass + ";" + proxy + "\n";
+            File.AppendAllText("finalResult.txt", finalInfo); //write in file
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,109 +82,113 @@ namespace Demo
 
                 ParsingProxy();
                 //m.Close();
-                /*OperationsWithFile.DeleteFirstLineFromFile("proxy.txt");*/ // delete first line from file
+                OperationsWithFile.DeleteFirstLineFromFile("proxy.txt"); // delete first line from file
 
 
 
-                //System.Diagnostics.Process.Start("www.instagram.com");
-                //System.Threading.Thread.Sleep(5000);
-                //Cursor.Position = new Point(1325, 95); //"свойства:интернет"
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(320, 510); //"настройка сети"
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
-                //Cursor.Position = new Point(150, 355); //"адрес"
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.DoubleLeftClick();
-                //System.Threading.Thread.Sleep(2000);
+                System.Diagnostics.Process.Start("www.instagram.com");
+                System.Threading.Thread.Sleep(5000);
+                Cursor.Position = new Point(1325, 95); //"свойства:интернет"
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(2000);
+                Cursor.Position = new Point(320, 510); //"настройка сети"
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                Cursor.Position = new Point(150, 355); //input proxy
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.DoubleLeftClick();
+                System.Threading.Thread.Sleep(2000);
                 Clipboard.SetText(proxy);
-                //SendKeys.Send("^{v}");
-                //System.Threading.Thread.Sleep(2000); //"порт"
-                //Cursor.Position = new Point(240, 355);
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.DoubleLeftClick();
-                //System.Threading.Thread.Sleep(2000);
+                SendKeys.Send("^{v}");
+                System.Threading.Thread.Sleep(2000); //input port
+                Cursor.Position = new Point(240, 355);
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.DoubleLeftClick();
+                System.Threading.Thread.Sleep(2000);
                 Clipboard.SetText(port);
-                //SendKeys.Send("^{v}");
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(240, 427);
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(75, 45); //refersh
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
-                //System.Threading.Thread.Sleep(2000);
+                SendKeys.Send("^{v}");
+                System.Threading.Thread.Sleep(2000);
+                Cursor.Position = new Point(240, 427);
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(2000);
+                Cursor.Position = new Point(75, 45); //refersh
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(2000);
                 Clipboard.SetText(proxyLogin); //insert proxyName
-                //SendKeys.Send("^{v}");
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(660, 245); //insert proxyPass
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
-                //System.Threading.Thread.Sleep(2000);
+                SendKeys.Send("^{v}");
+                System.Threading.Thread.Sleep(2000);
+                Cursor.Position = new Point(660, 245); //insert proxyPass
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(2000);
                 Clipboard.SetText(proxyPass);
-                //SendKeys.Send("^{v}");
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(680, 320);
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick(); //click
+                SendKeys.Send("^{v}");
+                System.Threading.Thread.Sleep(2000);
+                Cursor.Position = new Point(680, 320);
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick(); //click
 
-                //Cursor.Position = new Point(1250, 45); //coockie
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
-                //System.Threading.Thread.Sleep(2000); //delete coockie
-                //Cursor.Position = new Point(750, 75);
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(75, 45); //refersh
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(1250, 45); //coockie
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
-                //Cursor.Position = new Point(850, 250);
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.DoubleLeftClick(); //doubleclick in "Значение"
-                //System.Threading.Thread.Sleep(2000);
+
+                Cursor.Position = new Point(1250, 45); //coockie
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(2000); //delete coockie
+                Cursor.Position = new Point(750, 75);
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(2000);
+                Cursor.Position = new Point(75, 45); //refersh
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(2000);
+                Cursor.Position = new Point(1250, 45); //coockie
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                Cursor.Position = new Point(850, 250);
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.DoubleLeftClick(); //doubleclick in "Значение"
+                System.Threading.Thread.Sleep(2000);
                 Clipboard.SetText(midCoockie); //insert into buffer midCoockie value
-                //SendKeys.Send("^{v}"); //ctrl+v into "Значение" in plaggin
-                //Cursor.Position = new Point(980, 505); //save midCoockie
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(75, 45); //refersh
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(850, 435); //name field
-                //System.Threading.Thread.Sleep(2000);
-                //VirtualMouse.LeftClick();
+                SendKeys.Send("^{v}"); //ctrl+v into "Значение" in plaggin
+                Cursor.Position = new Point(980, 505); //save midCoockie
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(2000);
+                Cursor.Position = new Point(75, 45); //refersh
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(2000);
+
+
+                Cursor.Position = new Point(850, 435); //name field///////////////////
+                System.Threading.Thread.Sleep(2000);
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(2000);
                 Clipboard.SetText(name);
-                //SendKeys.Send("^{v}");
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(850, 400); //email field
-                //VirtualMouse.LeftClick();
-                //System.Threading.Thread.Sleep(2000);
+                SendKeys.Send("^{v}");
+
+                System.Threading.Thread.Sleep(2000);
+                Cursor.Position = new Point(850, 400); //email field
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(2000);
                 Clipboard.SetText(email);
-                //SendKeys.Send("^{v}");
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(850, 510); //pass field
-                //VirtualMouse.LeftClick();
+                SendKeys.Send("^{v}");
+
+                System.Threading.Thread.Sleep(2000);
+                Cursor.Position = new Point(850, 510); //pass field
+                VirtualMouse.LeftClick();
                 Clipboard.SetText(pass);
-                //SendKeys.Send("^{v}");
-                //System.Threading.Thread.Sleep(2000);
-                //Cursor.Position = new Point(850, 555); //registration click
-                //VirtualMouse.LeftClick();
-                //System.Threading.Thread.Sleep(3000);
-                //VirtualMouse.LeftClick();
+                SendKeys.Send("^{v}");
+
+                System.Threading.Thread.Sleep(2000);
+                Cursor.Position = new Point(850, 555); //registration click
+                VirtualMouse.LeftClick();
+                System.Threading.Thread.Sleep(3000);
+                VirtualMouse.LeftClick();
             }
-
-
-
         }
     }
 }
