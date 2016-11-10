@@ -13,7 +13,7 @@ namespace InstaTest
         {
             string file_name = x;
             string[] readText = File.ReadAllLines(file_name);
-            using (StreamWriter file = new StreamWriter(file_name, false))
+            using (var file = new StreamWriter(file_name, false))
             {
                 for (int i = 0; i < readText.Length; i++)
                 {
