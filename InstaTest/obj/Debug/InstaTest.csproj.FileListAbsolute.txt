@@ -1,0 +1,9 @@
+c:\users\пользователь\documents\visual studio 2015\Projects\InstaTest\InstaTest\bin\Debug\InstaTest.exe.config
+c:\users\пользователь\documents\visual studio 2015\Projects\InstaTest\InstaTest\obj\Debug\InstaTest.csprojResolveAssemblyReference.cache
+c:\users\пользователь\documents\visual studio 2015\Projects\InstaTest\InstaTest\obj\Debug\Demo.Form1.resources
+c:\users\пользователь\documents\visual studio 2015\Projects\InstaTest\InstaTest\obj\Debug\InstaTest.Properties.Resources.resources
+c:\users\пользователь\documents\visual studio 2015\Projects\InstaTest\InstaTest\obj\Debug\InstaTest.csproj.GenerateResource.Cache
+c:\users\пользователь\documents\visual studio 2015\Projects\InstaTest\InstaTest\bin\Debug\InstaTest.exe
+c:\users\пользователь\documents\visual studio 2015\Projects\InstaTest\InstaTest\bin\Debug\InstaTest.pdb
+c:\users\пользователь\documents\visual studio 2015\Projects\InstaTest\InstaTest\obj\Debug\InstaTest.exe
+c:\users\пользователь\documents\visual studio 2015\Projects\InstaTest\InstaTest\obj\Debug\InstaTest.pdb
